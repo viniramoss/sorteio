@@ -37,7 +37,9 @@ select:focus, select:checked, select:active {
 #city {
     min-width: 14em;
 }
-
+#nSorteio {
+    min-width: 13em;
+}
 
 
 
