@@ -1,124 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Vinicius Ramos | Home</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="IMG\apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="IMG\favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="IMG\favicon-16x16.png">
-    <link rel="stylesheet" href="CSS/normalize.css">
-    <link rel="stylesheet" href="CSS/style.css" >
-
-
+    <link rel="apple-touch-icon" sizes="180x180" href="../IMG\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../IMG\favicon-16x16.png">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/login.css" >
 </head>
 <body class="" id="body">
-    <header id="header">
-            <div id="logo-container">
-                <a href="/index.html" class="logo-link"><img src="./IMG/favicon.ico" alt="" class="logo-img"></a>
-            </div>
-            <div>
-                <a href="./HTML/login.html"><img src="./IMG/user.svg" alt="" class="profile"></a>
-            </div>
+    <header id="header" class="">
 
-            <nav id="nav-container" class="">
-
-                <button id="mobile-menu" aria-controls="nav-menu" aria-haspopup="true" aria-label="abrir menu">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </button>
-            
-                <ul  class="nav-menu" role="menu" id="nav-menu">
-                        <a href="./index.html"><li>Home</li></a>
-                        <a href="./HTML/contact.html"><li>Contact</li></a>
-                        <a href="./HTML/about.html"><li>About</li></a>
-                </ul>
-            </nav>
+        <div class="info-page">
+            <a href="index.html">
+                <h1>
+                    Login
+                </h1>
+            </a>
+        </div>
 
     </header>
-    <main>
-        <section id="main-gallery">
-            <div class="prize">
-                <img src="./IMG/hard.jpg" alt="" class="prize-img">
-            </div>
-        </section>
-        
-        <section id="info">
-
-            <div class="day-value">
-
-                <h1>Sorteio</h1>
-                <table id="draw-info">
-                    <thead>
-                        <tr>
-                            <td>Valor</td>
-                            <td>Data do sorteio</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>R$ 20,00</td>
-                            <td>29/01/2022</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div id="container-timer">
-
-                <div id="bar-timer">
-                    <div class="bar-background">
-                        <p>85.5% da meta de 100%</p>
-                    </div>
+    <section id="login">
+        <div id="login-infos" class=""> 
+            <div class="inputs">
+                <div class="name">
+                    <!-- <label for="name">Nome</label> -->
+                    <input type="text" name="name" placeholder="Usuario" id="name">
                 </div>
-                <div id="timer">
-                    TIMER TIMER TIMER TIMER
-                </div>
-                
-            </div>
-
-            <div class="user">
-                <img src="./IMG/sem-foto-Feminino.webp" alt="" class="img-user">
-
-                <div class="user-city">
-                    <p>Usuario</p>
-                    <p>Curitiba/PR</p>
+                <div class="pass">
+                    <!-- <label for="password">Senha</label> -->
+                    <input type="password" name="password" id="pass" placeholder="Senha">
                 </div>
             </div>
-
-        </section>  
-    
-
-        <section id="prize-draw">
-            <div id="choose-number">
-                
-            </div>
-            <div id="choose_name">
-                $$$$$$$$$$$$$$$$$$
-                <h1>Qual o seu nome?</h1>
-                <input class="" type="text" placeholder="Escreva seu nome aqui">
-                <button class="">Escolher Numero</button>
-            </div>   
-        </section>
-
-        <section id="ticket-container">
-            
-            <div id="ticket">
-                <ul>
-                    <a href="#0"><li>000</li></a>
-                </ul>
-            </div>
-            
+            <button id="arrow"  class="arrow">
+                <img src="../IMG/down-arrow.svg" alt="" id="arrow-img" class=""> 
+            </button>
+        </div>
 
 
-        </section>
+    </section>
 
 
+    <script src="../JS/login.js"></script>
 
-    </main>
-    <script src="./JS/index.js"></script>
 </body>
+
 </html>

@@ -38,7 +38,7 @@ btn.addEventListener( 'click', sendUser )
 btn.addEventListener( 'touchstart', sendUser )
 
 function changeWindow () {
-    window.location.href = "userSide.html"
+    window.location.href = "HTML/userSide.html"
 }
 
 document.addEventListener('keypress', function(e) {
