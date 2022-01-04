@@ -1,3 +1,4 @@
+
 #input-file {
     display: none;
 }
@@ -37,7 +38,7 @@ select:focus, select:checked, select:active {
 #city {
     min-width: 14em;
 }
-#rifa {
+#nSorteio {
     min-width: 13em;
 }
 
@@ -52,4 +53,3 @@ select:focus, select:checked, select:active {
         opacity: 1;
         transform: translate(0,0);
     }
-}
