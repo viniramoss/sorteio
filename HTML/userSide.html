@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Vinicius Ramos | Home</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../IMG\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../IMG\favicon-16x16.png">
+    <link rel="stylesheet" href="../CSS/normalize.css">
+    <link rel="stylesheet" href="../CSS/style.css" >
+    <link rel="stylesheet" href="../CSS/userSide.css" >
+
+
+</head>
+<body class="" id="body">
+    <header id="header">
+        <div id="logo-container">
+            <a href="../index.html" class="logo-link"><img src="../IMG/favicon.ico" alt="" class="logo-img"></a>
+        </div>
+        
+        <div>
+            <a href="../HTML/login.html"><img src="../IMG/user.svg" alt="" class="profile"></a>
+        </div>
+
+        <nav id="nav-container" class="">
+
+            <button id="mobile-menu" aria-controls="nav-menu" aria-haspopup="true" aria-label="abrir menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+        
+            <ul  class="nav-menu" role="menu" id="nav-menu">
+                    <a id="a" href="../index.html"><li>Home</li></a>
+                    <a href="../HTML/contact.html"><li>Contact</li></a>
+                    <a href="../HTML/about.html"><li>About</li></a>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="info-user">
+            <form action="" id="form-user">
+                    <button id="btn-file" disabled>
+                        <input type="file" name="" id="input-file">
+                        Selecione suas fotos (disabled)
+                    </button>
+
+
+                    <input type="text" name="valor" id="valor" placeholder="Valor do ticket" onclick="altValue()">
+                    <input type="date" name="date" id="date" min="2022-01-02" value="2022-01-02">
+                    <input type="text" name="userName" id="userName" placeholder="Seu nome">
+                    <select name="state" id="state"> 
+                        <option value="defaultState">Seu estado</option> 
+                        <option value="AC">Acre</option> 
+                        <option value="AL">Alagoas</option> 
+                        <option value="AM">Amazonas</option> 
+                        <option value="AP">Amapá</option> 
+                        <option value="BA">Bahia</option> 
+                        <option value="CE">Ceará</option> 
+                        <option value="DF">Distrito Federal</option> 
+                        <option value="ES">Espírito Santo</option> 
+                        <option value="GO">Goiás</option> 
+                        <option value="MA">Maranhão</option> 
+                        <option value="MT">Mato Grosso</option> 
+                        <option value="MS">Mato Grosso do Sul</option> 
+                        <option value="MG">Minas Gerais</option> 
+                        <option value="PA">Pará</option> 
+                        <option value="PB">Paraíba</option> 
+                        <option value="PR">Paraná</option> 
+                        <option value="PE">Pernambuco</option> 
+                        <option value="PI">Piauí</option> 
+                        <option value="RJ">Rio de Janeiro</option> 
+                        <option value="RN">Rio Grande do Norte</option> 
+                        <option value="RO">Rondônia</option> 
+                        <option value="RS">Rio Grande do Sul</option> 
+                        <option value="RR">Roraima</option> 
+                        <option value="SC">Santa Catarina</option> 
+                        <option value="SE">Sergipe</option> 
+                        <option value="SP">São Paulo</option> 
+                        <option value="TO">Tocantins</option> 
+                    </select>
+
+                    <select name="city" id="city">
+                        <option value="defaultCity">Selecione sua cidade</option>
+                    </select>
+
+                    <select name="rifa" id="rifa">
+                        <option value="defaultRifa">Quantidade de rifas</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="250">250</option>
+                        <option value="500">500</option>
+                        <option value="750">750</option>
+                        <option value="1000">1000</option>
+                    </select>
+                    <button type="button">Submit</button>
+            </form>
+
+        </section>
+
+
+
+
+    </main>
+    <script src="../JS/userSide.js"></script>
+</body>
+</html>
