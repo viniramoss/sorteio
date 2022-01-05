@@ -13,19 +13,13 @@
         }
     })
 })()
-
-
+const formUser = document.getElementById('form-user');
 function animation(){
     Array.from(formUser.elements).forEach( (input, index, label) => {
         input.style.animation ? (input.style.animation = ``) : (input.style.animation = `translateUserInfo 0.8s ease-out forwards ${index / 9 + 0.1}s`);
     })
 }
-
-const formUser = document.getElementById('form-user');
-
 animation()
-
-
 function altValue(){
     const valueTicket = document.getElementById('valor')
     
@@ -33,9 +27,6 @@ function altValue(){
         valueTicket.value = 'R$'
     }
 }
-
-
-
 function showCity(){
 
     const childForm = formUser.querySelectorAll('select')
@@ -48,104 +39,95 @@ function showCity(){
         childForm[1].style.opacity = '1'
 
         childForm[1].style.transform = 'translate(0,0)'
+
+        changeOptValue()
     } else {
         city.style.display = 'none';
     }
-
-    (function changeOptValue(){
-
-        const requestURL = '../JS/e.json';
-
-        const request = new XMLHttpRequest();
-        request.open('GET', requestURL)
-        request.responseType = 'json';
-        request.send();
-
-        request.onload = function() {
-            var arr = request.response;
-
-            let x = arr.estados.findIndex( x => x.sigla === valueState.value)
-
-            const select = document.querySelector('#city');
-
-            let length = select.options.length;
-            for (i = length-1; i >= 0; i--) {
-            select.options[i] = null;
-            }
-
-            select.options[select.options.length] = new Option('Selecione sua cidade', 'defaultCity')
-
-            for(let i = 0; i < arr.estados[x].cidades.length; i++){
-                select.options[select.options.length] = new Option(arr.estados[x].cidades[i], arr.estados[x].sigla );
-            }
-        }
-    })()
-    
 }
+function changeOptValue(){
+
+    const requestURL = '../JS/cidades.json';
+
+    const request = new XMLHttpRequest();
+    request.open('GET', requestURL)
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+        var arr = request.response;
+
+        let x = arr.estados.findIndex( x => x.sigla === valueState.value)
+
+        const select = document.querySelector('#city');
+
+        let length = select.options.length;
+        for (i = length-1; i >= 0; i--) {
+        select.options[i] = null;
+        }
+
+        select.options[select.options.length] = new Option('Selecione sua cidade', 'defaultCity')
+
+        for(let i = 0; i < arr.estados[x].cidades.length; i++){
+            select.options[select.options.length] = new Option(arr.estados[x].cidades[i], arr.estados[x].sigla );
+        }
+    }
+}
+function dadosUser(){
+    const requestURL = '../JS/dadosUser.json';
+
+    const request = new XMLHttpRequest();
+    request.open('GET', requestURL)
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+
+        let optCity = city.children[city.selectedIndex];
+
+        var dadosContainer = request.response;
+
+        dadosContainer.dados.nomeSorteio = nomeSorteio.value;
+        dadosContainer.dados.valorTicket = valorTicket.value;
+        dadosContainer.dados.dataSorteio = dataSorteio.value;
+        dadosContainer.dados.username = username.value;
+        dadosContainer.dados.estadoUser = valueState.value;
+        dadosContainer.dados.cidadeUser = optCity.textContent;
+        dadosContainer.dados.qtdqtdTickets = qtdTickets.value;
+
+        console.log(dadosContainer.dados.nomeSorteio)
+        console.log(dadosContainer.dados.valorTicket)
+        console.log(dadosContainer.dados.dataSorteio)
+        console.log(dadosContainer.dados.username)
+        console.log(dadosContainer.dados.estadoUser)
+        console.log(dadosContainer.dados.cidadeUser)
+        console.log(dadosContainer.dados.qtdqtdTickets)
 
 
-const valueState = document.getElementById('state')
-valueState.addEventListener('change', showCity)
+        localStorage.setItem('json',JSON.stringify( dadosContainer))
 
-const city = document.getElementById('city')
-
-city.style.display = 'none'
-
-
-
+        // setTimeout(changeWindow, 200)
+    }
+}
+const submitBtn = document.getElementById("submit");
+submitBtn.addEventListener('click', dadosUser);
 
 
+const nomeSorteio = document.getElementById('nSorteio');
+const valorTicket = document.getElementById('valor');
+const dataSorteio = document.getElementById('date');
+const username    = document.getElementById('username');
 
+const valueState = document.getElementById('state');
+valueState.addEventListener('change', showCity);
 
+const city = document.getElementById('city');
 
+city.style.display = 'none';
 
-
-
-
-
-
-
-
-
-
+const qtdTickets = document.getElementById('qtdTickets');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function changeWindow () {
+    window.location.href = "fullPage.html"
+}

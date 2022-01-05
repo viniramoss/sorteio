@@ -1,0 +1,11 @@
+{
+    "dados": {
+        "nomeSorteio" : "a",
+        "valorTicket": "",
+        "dataSorteio" : "",
+        "username" : "",
+        "estadoUser"  : "",
+        "cidadeUser"  : "",
+        "qtdTickets"  : ""
+    }
+}

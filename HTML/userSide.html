@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG\favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../IMG\favicon-16x16.png">
     <link rel="stylesheet" href="../CSS/normalize.css">
-    <link rel="stylesheet" href="../CSS/style.css" >
+    <link rel="stylesheet" href="../CSS/fullPage.css" >
     <link rel="stylesheet" href="../CSS/userSide.css" >
 
 
@@ -54,7 +54,7 @@
                     <input type="text" name="nSorteio" id="nSorteio" placeholder="O que você vai sortear?">
                     <input type="text" name="valor" id="valor" placeholder="Valor do ticket" onclick="altValue()">
                     <input type="date" name="date" id="date" min="2022-01-02" value="2022-01-02">
-                    <input type="text" name="userName" id="userName" placeholder="Seu nome">
+                    <input type="text" name="userName" id="username" placeholder="Seu nome">
                     <select name="state" id="state"> 
                         <option value="defaultState">Seu estado</option> 
                         <option value="AC">Acre</option> 
@@ -90,7 +90,7 @@
                         <option value="defaultCity">Selecione sua cidade</option>
                     </select>
 
-                    <select name="rifa" id="rifa">
+                    <select name="rifa" id="qtdTickets">
                         <option value="defaultRifa">Quantidade de rifas</option>
                         <option value="10">10</option>
                         <option value="20">20</option>
@@ -103,7 +103,7 @@
                         <option value="750">750</option>
                         <option value="1000">1000</option>
                     </select>
-                    <button type="button">Submit</button>
+                    <button type="button" id="submit">Submit</button>
             </form>
 
         </section>
