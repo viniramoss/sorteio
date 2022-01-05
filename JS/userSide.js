@@ -94,18 +94,9 @@ function dadosUser(){
         dadosContainer.dados.cidadeUser = optCity.textContent;
         dadosContainer.dados.qtdqtdTickets = qtdTickets.value;
 
-        console.log(dadosContainer.dados.nomeSorteio)
-        console.log(dadosContainer.dados.valorTicket)
-        console.log(dadosContainer.dados.dataSorteio)
-        console.log(dadosContainer.dados.username)
-        console.log(dadosContainer.dados.estadoUser)
-        console.log(dadosContainer.dados.cidadeUser)
-        console.log(dadosContainer.dados.qtdqtdTickets)
-
-
         localStorage.setItem('json',JSON.stringify( dadosContainer))
 
-        // setTimeout(changeWindow, 200)
+        setTimeout(changeWindow, 200)
     }
 }
 const submitBtn = document.getElementById("submit");
