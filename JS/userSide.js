@@ -1,3 +1,4 @@
+window.localStorage.clear() ;
 
 (function fileClick(){
     const inputFile = document.getElementById('input-file');
@@ -92,9 +93,9 @@ function dadosUser(){
             valorTicket.value !== '' &&
             dataSorteio.value !== '' &&
             username.value    !== '' &&
-            valueState.value  !== '' &&
-         optCity.textContent  !== '' &&
-            qtdTickets.value  !== ''
+            valueState.value  !== 'defaultState' &&
+            city.value        !== 'defaultCity' &&
+            qtdTickets.value  !== 'defaultRifa'
         ){
 
             dadosContainer.dados.nomeSorteio = nomeSorteio.value;
@@ -142,4 +143,22 @@ function changeWindow () {
     window.location.href = "fullPage.html"
 }
 
-window.localStorage.clear()
+const dataAtual = new Date();
+let dia = dataAtual.getDate();
+let mes = dataAtual.getMonth() + 1;
+let ano = dataAtual.getFullYear();
+
+if(parseInt(dia) < 10){
+    dia = '0'+dia
+}
+if(parseInt(mes) < 10){
+    mes = '0'+mes
+}
+
+
+
+dataSorteio.min = `${ano}-${mes}-${dia}`;
+dataSorteio.value = `${ano}-${mes}-${dia}`;
+
+
+
