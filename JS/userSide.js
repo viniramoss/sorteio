@@ -122,3 +122,5 @@ const qtdTickets = document.getElementById('qtdTickets');
 function changeWindow () {
     window.location.href = "fullPage.html"
 }
+
+window.localStorage.clear()
