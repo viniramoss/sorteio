@@ -1,3 +1,17 @@
+const dadosLocalStorage = localStorage.getItem('json');
+const dadosContainer = JSON.parse(dadosLocalStorage);
+
+userDados()
+
+function userDados(){
+    document.getElementById('nomeSorteio').textContent = dadosContainer.dados.nomeSorteio;
+    document.getElementById('valorSorteio').textContent = dadosContainer.dados.valorTicket;
+    document.getElementById('dataSorteio').textContent = dadosContainer.dados.dataSorteio.split('-').reverse().join('/');
+    document.getElementById('username').textContent = dadosContainer.dados.username;
+    document.getElementById('cidadeEstado').textContent = `${dadosContainer.dados.cidadeUser}/${dadosContainer.dados.estadoUser}`
+}
+
+
 (function sandwichMenu(){
 
 
@@ -49,7 +63,7 @@
     btnMobileMenu.addEventListener('click', toggleMenu)
     btnMobileMenu.addEventListener('touchstart', toggleMenu)
 
-})()
+})();
 
 window.addEventListener('resize', function () {
     let largura = window.innerWidth;
@@ -57,22 +71,3 @@ window.addEventListener('resize', function () {
     if (largura < 550) 
         document.getElementById('nav-container').className = "";
 });
-
-
-function showConsole(){
-
-            let dadosLocalStorage = localStorage.getItem('json');
-            let dadosContainer = JSON.parse(dadosLocalStorage);
-
-            console.log(dadosContainer.dados.nomeSorteio)
-            console.log(dadosContainer.dados.valorTicket)
-            console.log(dadosContainer.dados.dataSorteio)
-            console.log(dadosContainer.dados.username)
-            console.log(dadosContainer.dados.estadoUser)
-            console.log(dadosContainer.dados.cidadeUser)
-            console.log(dadosContainer.dados.qtdqtdTickets)
-
-}
-
-const btnTeste = document.getElementById('btnTeste');
-btnTeste.addEventListener('click', showConsole)
