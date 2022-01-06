@@ -86,13 +86,32 @@ function dadosUser(){
 
         var dadosContainer = request.response;
 
-        dadosContainer.dados.nomeSorteio = nomeSorteio.value;
-        dadosContainer.dados.valorTicket = valorTicket.value;
-        dadosContainer.dados.dataSorteio = dataSorteio.value;
-        dadosContainer.dados.username = username.value;
-        dadosContainer.dados.estadoUser = valueState.value;
-        dadosContainer.dados.cidadeUser = optCity.textContent;
-        dadosContainer.dados.qtdqtdTickets = qtdTickets.value;
+        if(
+
+            nomeSorteio.value !== '' &&
+            valorTicket.value !== '' &&
+            dataSorteio.value !== '' &&
+            username.value    !== '' &&
+            valueState.value  !== '' &&
+         optCity.textContent  !== '' &&
+            qtdTickets.value  !== ''
+        ){
+
+            dadosContainer.dados.nomeSorteio = nomeSorteio.value;
+            dadosContainer.dados.valorTicket = valorTicket.value;
+            dadosContainer.dados.dataSorteio = dataSorteio.value;
+            dadosContainer.dados.username = username.value;
+            dadosContainer.dados.estadoUser = valueState.value;
+            dadosContainer.dados.cidadeUser = optCity.textContent;
+            dadosContainer.dados.qtdqtdTickets = qtdTickets.value;
+
+        } else {
+            alert('Por gentileza, preencha todos os campos <3');
+            return
+        }
+
+
+
 
         localStorage.setItem('json',JSON.stringify( dadosContainer))
 
