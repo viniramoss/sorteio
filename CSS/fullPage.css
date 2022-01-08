@@ -215,6 +215,10 @@ a:active{
     padding: 11px 10px 10px;
     border-radius: 20%;
 }
+#ticket li.active {
+    color: #437C90;
+    background-color: #c5c5c5;
+}
 
 
 

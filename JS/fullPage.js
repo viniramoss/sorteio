@@ -28,15 +28,14 @@ function addTickets(){
 }
 const liTicket = document.querySelectorAll('.liTick');
 function addActiveClass(){
-    
-    
     for(let i = 0; i <= n; i++) {
         liTicket[i].addEventListener('click', activeBtn);
-        liTicket[i].setAttribute('id', `id${i}`)
     }
 }
 function activeBtn() {
-        console.log('1')
+    let _class = this.classList
+    _class.toggle('active')
+
 }
 addActiveClass();
 
