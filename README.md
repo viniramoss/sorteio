@@ -1,2 +1,2 @@
 Usuario - User  
-Sneha   - $1964
+Senha   - $1964
