@@ -1,5 +1,6 @@
 const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
+const n = dadosContainer.dados.qtdTickets
 
 userDados()
 addTickets()
@@ -13,17 +14,32 @@ function userDados(){
 }
 
 function addTickets(){
-    const n = dadosContainer.dados.qtdTickets
+    
     for(let i = 0; i <= n; i++){
         if(i < 10){
-            document.getElementById('ul-ticket').innerHTML += `<li> 00${i}</li>`
+            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> 00${i}</li>`
         } else if( i < 100){
-            document.getElementById('ul-ticket').innerHTML += `<li> 0${i}</li>`
+            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> 0${i}</li>`
         } else {
-            document.getElementById('ul-ticket').innerHTML += `<li> ${i}</li>`
+            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> ${i}</li>`
         }
+        
     }
 }
+const liTicket = document.querySelectorAll('.liTick');
+function addActiveClass(){
+    
+    
+    for(let i = 0; i <= n; i++) {
+        liTicket[i].addEventListener('click', activeBtn);
+        liTicket[i].setAttribute('id', `id${i}`)
+    }
+}
+function activeBtn() {
+        console.log('1')
+}
+addActiveClass();
+
 
 
 
@@ -87,3 +103,7 @@ window.addEventListener('resize', function () {
     if (largura < 550) 
         document.getElementById('nav-container').className = "";
 });
+
+
+
+

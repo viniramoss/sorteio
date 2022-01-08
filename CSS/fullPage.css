@@ -208,10 +208,12 @@ a:active{
 }
 #ticket li {
 
+    cursor: pointer;
     background-color: #437C90;
     color: #DBDBDB;
     border: 1px solid #DBDBDB;
     padding: 11px 10px 10px;
+    border-radius: 20%;
 }
 
 
