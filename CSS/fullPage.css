@@ -199,13 +199,12 @@ a:active{
 }
 
 
-#ticket {
-    margin: 2em 0;
-}
-#ticket ul {
+#ul-ticket {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    margin-top: 2em;
 }
 #ticket li {
 

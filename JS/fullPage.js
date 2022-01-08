@@ -2,6 +2,7 @@ const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
 
 userDados()
+addTickets()
 
 function userDados(){
     document.getElementById('nomeSorteio').textContent = dadosContainer.dados.nomeSorteio;
@@ -10,6 +11,21 @@ function userDados(){
     document.getElementById('username').textContent = dadosContainer.dados.username;
     document.getElementById('cidadeEstado').textContent = `${dadosContainer.dados.cidadeUser}/${dadosContainer.dados.estadoUser}`
 }
+
+function addTickets(){
+    const n = dadosContainer.dados.qtdTickets
+    for(let i = 0; i <= n; i++){
+        if(i < 10){
+            document.getElementById('ul-ticket').innerHTML += `<li> 00${i}</li>`
+        } else if( i < 100){
+            document.getElementById('ul-ticket').innerHTML += `<li> 0${i}</li>`
+        } else {
+            document.getElementById('ul-ticket').innerHTML += `<li> ${i}</li>`
+        }
+    }
+}
+
+
 
 
 (function sandwichMenu(){

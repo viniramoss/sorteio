@@ -97,15 +97,13 @@ function dadosUser(){
             city.value        !== 'defaultCity' &&
             qtdTickets.value  !== 'defaultRifa'
         ){
-
             dadosContainer.dados.nomeSorteio = nomeSorteio.value;
             dadosContainer.dados.valorTicket = valorTicket.value;
             dadosContainer.dados.dataSorteio = dataSorteio.value;
             dadosContainer.dados.username = username.value;
             dadosContainer.dados.estadoUser = valueState.value;
             dadosContainer.dados.cidadeUser = optCity.textContent;
-            dadosContainer.dados.qtdqtdTickets = qtdTickets.value;
-
+            dadosContainer.dados.qtdTickets = qtdTickets.value;
         } else {
             alert('Por gentileza, preencha todos os campos <3');
             return
