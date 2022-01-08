@@ -197,9 +197,8 @@ a:active{
 .user-city p:nth-child(2) {
     color: #437C90;
 }
-
-
 #ul-ticket {
+    flex-basis: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -207,12 +206,12 @@ a:active{
     margin-top: 2em;
 }
 #ticket li {
-
     cursor: pointer;
     background-color: #437C90;
     color: #DBDBDB;
     border: 1px solid #DBDBDB;
-    padding: 11px 10px 10px;
+    padding: 12px 11px 10px 9px;
+    width: 25px;
     border-radius: 20%;
 }
 #ticket li.active {
