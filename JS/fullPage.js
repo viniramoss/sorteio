@@ -2,6 +2,9 @@ const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
 const n = dadosContainer.dados.qtdTickets
 
+
+const ulTickets = document.getElementById('ul-ticket')
+
 userDados()
 addTickets()
 
@@ -14,18 +17,26 @@ function userDados(){
 }
 
 function addTickets(){
-    
+     document.getElementById('ul-ticket')
     for(let i = 0; i <= n; i++){
         if(i < 10){
-            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> 00${i}</li>`
+            ulTickets.innerHTML += `<li class="liTick">00${i}</li>`
         } else if( i < 100){
-            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> 0${i}</li>`
+            ulTickets.innerHTML += `<li class="liTick">0${i}</li>`
         } else {
-            document.getElementById('ul-ticket').innerHTML += `<li class="liTick"> ${i}</li>`
+            ulTickets.innerHTML += `<li class="liTick">${i}</li>`
         }
         
     }
 }
+
+
+
+
+const ticketsParaOSorteio = []
+
+
+
 const liTicket = document.querySelectorAll('.liTick');
 function addActiveClass(){
     for(let i = 0; i <= n; i++) {
@@ -35,11 +46,21 @@ function addActiveClass(){
 function activeBtn() {
     let _class = this.classList
     _class.toggle('active')
+    
+    let indexOf = ticketsParaOSorteio.indexOf(this.textContent)
+    if( indexOf >= 0){
 
+
+        ticketsParaOSorteio.splice(indexOf, 1) 
+        console.log('if')
+        console.log(ticketsParaOSorteio)
+    } else {
+        ticketsParaOSorteio.push(this.textContent) 
+        console.log(ticketsParaOSorteio)
+        console.log('else')
+    }
 }
 addActiveClass();
-
-
 
 
 
