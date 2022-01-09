@@ -131,6 +131,10 @@ window.addEventListener('resize', function () {
         document.getElementById('nav-container').className = "";
 });
 
+function animationCar(){
+    buyBtn.style.animation = `car .5s linear forwards`
+}
 
-
+const buyBtn = document.getElementById('buy-btn')
+buyBtn.addEventListener('click', animationCar)
 
