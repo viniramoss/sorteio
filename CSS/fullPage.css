@@ -220,42 +220,38 @@ a:active{
 }
 
 
+#numeros-container {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    margin: 2em auto;
+}
 
+#bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #29274C;
+    height: 1.5em;
+    padding: 3px 0;
+    color: #DBDBDB;
+}
 
-/* prize draw */
+#numeros-participantes {
+    display: flex;
+    justify-content: center;
+    min-height: 4em;
+    height: auto;
+    background-color: #e9e7f0;
+}
+#numeros-participantes p {
+    color: #437C90;
+    line-height: 1.8em;
+    max-width: 90%;
 
-#choose_name {
-    background-color: #437C90;
-    display: none;
-    margin: 5em auto ;
-    width: 50%;
-    padding: 50px;
-    border-radius: 50px;
-    box-sizing: border-box;
-    text-align: center;
+    margin-left: 0.8em;
 }
-#choose_name input {    
-    display: block;
-    margin: auto;
-    width: 60%;
-    padding: 1em;
-    border: none;
-    border-radius: 20px;
-}
-#choose_name input:focus {
-    outline: #D1D1D1;
-}
-#choose_name button {
-    margin-top: 6em;
-    background-color: #D1D1D1;
-    padding: 15px;
-    border: none;
-    border-radius: 20px;
-}
-.small_border {
-    border: black solid 0.5px;
-    border-radius: 15px;
-}
+
 .l {
     color: #437C90;
     color: #29274C;

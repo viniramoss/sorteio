@@ -33,9 +33,13 @@ function addTickets(){
 
 
 
-const ticketsParaOSorteio = []
+numerosParticipantes = []
 
-
+function adiconarNumerosPartipantesTela(){
+    let nP = document.querySelector('#numeros-participantes p')
+    nP.textContent = numerosParticipantes.join(' - ')
+    console.log(nP.textContent)
+}
 
 const liTicket = document.querySelectorAll('.liTick');
 function addActiveClass(){
@@ -47,20 +51,23 @@ function activeBtn() {
     let _class = this.classList
     _class.toggle('active')
     
-    let indexOf = ticketsParaOSorteio.indexOf(this.textContent)
+    let indexOf = numerosParticipantes.indexOf(this.textContent)
     if( indexOf >= 0){
-
-
-        ticketsParaOSorteio.splice(indexOf, 1) 
+        numerosParticipantes.splice(indexOf, 1) 
         console.log('if')
-        console.log(ticketsParaOSorteio)
+        adiconarNumerosPartipantesTela()
     } else {
-        ticketsParaOSorteio.push(this.textContent) 
-        console.log(ticketsParaOSorteio)
+        numerosParticipantes.push(this.textContent) 
         console.log('else')
+        adiconarNumerosPartipantesTela()
     }
 }
 addActiveClass();
+
+
+
+
+
 
 
 
