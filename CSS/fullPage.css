@@ -308,6 +308,8 @@ a:active{
     align-items: center;
     width: 80%;
     min-height: 50px;
+    max-height: 150px;
+    overflow: auto;
     height: auto;
     background-color: #e9e7f0;
 }
