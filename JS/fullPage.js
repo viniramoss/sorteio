@@ -33,13 +33,9 @@ function addTickets(){
 
 
 
-numerosParticipantes = []
+numerosParticipantes = [];
 
-function adiconarNumerosPartipantesTela(){
-    let nP = document.querySelector('#numeros-participantes p')
-    nP.textContent = numerosParticipantes.join(' - ')
-    console.log(nP.textContent)
-}
+
 
 const liTicket = document.querySelectorAll('.liTick');
 function addActiveClass(){
@@ -54,12 +50,8 @@ function activeBtn() {
     let indexOf = numerosParticipantes.indexOf(this.textContent)
     if( indexOf >= 0){
         numerosParticipantes.splice(indexOf, 1) 
-        console.log('if')
-        adiconarNumerosPartipantesTela()
     } else {
         numerosParticipantes.push(this.textContent) 
-        console.log('else')
-        adiconarNumerosPartipantesTela()
     }
 }
 addActiveClass();
@@ -131,10 +123,27 @@ window.addEventListener('resize', function () {
         document.getElementById('nav-container').className = "";
 });
 
-function animationCar(){
-    buyBtn.style.animation = `car .5s linear forwards`
-}
 
-const buyBtn = document.getElementById('buy-btn')
-buyBtn.addEventListener('click', animationCar)
+
+(function payment(){
+
+    const body = document.getElementById('body');
+    const payCard = document.getElementById('pagamento');
+    const buyBtn = document.getElementById('buy-btn');
+    const showNumeros = document.querySelector('#showNumeros p');
+
+    function animationPay(){
+        buyBtn.style.animation = `car .5s linear forwards`
+        payCard.style.animation = `payCard .5 linear forwards 1s`
+        body.style.overflow = 'hidden'
+
+        for(let i = 0; i <= n; i++) {
+            liTicket[i].removeEventListener('click', activeBtn);
+        }
+        showNumeros.textContent = numerosParticipantes.join(' - ')
+        
+    }
+    buyBtn.addEventListener('click', animationPay)
+})();
+
 
