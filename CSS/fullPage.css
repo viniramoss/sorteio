@@ -298,23 +298,23 @@ a:active{
 
     margin-top: 30px;
     width: 80%;
-    height: 20px;
+    height: 25px;
 
     background-color: #437C90;
     color: white;
-    padding: 8px 4px 4px;
 }
 #showNumeros {
     display: flex;
     align-items: center;
     width: 80%;
-    min-height: 40px;
+    min-height: 50px;
     height: auto;
     background-color: #e9e7f0;
 }
 #showNumeros p {
     margin: 10px 8px 10px 22px;
     color: #29274C;
+    line-height: 1.4em;
 }
 
 
