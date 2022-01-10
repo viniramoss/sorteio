@@ -131,19 +131,33 @@ window.addEventListener('resize', function () {
     const payCard = document.getElementById('pagamento');
     const buyBtn = document.getElementById('buy-btn');
     const showNumeros = document.querySelector('#showNumeros p');
+    const closeBtn = document.getElementById('closeBtn')
 
-    function animationPay(){
-        buyBtn.style.animation = `car .5s linear forwards`
-        payCard.style.animation = `payCard .5 linear forwards 1s`
-        body.style.overflow = 'hidden'
+    function toolsPay(){
 
-        for(let i = 0; i <= n; i++) {
-            liTicket[i].removeEventListener('click', activeBtn);
+        if(this.tagName === "BUTTON"){
+            buyBtn.style.animation = `car .5s linear forwards`
+            payCard.style.animation = `payCard .5 linear forwards 1s`
+            body.style.overflow = 'hidden'
+    
+            for(let i = 0; i <= n; i++) {
+                liTicket[i].removeEventListener('click', activeBtn);
+            }
+            showNumeros.textContent = numerosParticipantes.join(' - ')
+            console.log(this.tagName)
+        } else {
+            for(let i = 0; i <= n; i++) {
+                liTicket[i].addEventListener('click', activeBtn);
+            }
+            payCard.style.animation = `payCardReverse .5 linear forwards`
+            body.style.overflowY = 'visible'
+            buyBtn.style.animation = `carReverse .5s linear forwards`
+            console.log(this.tagName)
         }
-        showNumeros.textContent = numerosParticipantes.join(' - ')
         
     }
-    buyBtn.addEventListener('click', animationPay)
+    buyBtn.addEventListener('click', toolsPay)
+    closeBtn.addEventListener('click', toolsPay)
 })();
 
 

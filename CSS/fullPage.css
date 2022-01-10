@@ -287,7 +287,7 @@ a:active{
     justify-content: flex-start;
 
     transform: translateX(-100vw) ;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 #seusNumeros {
     display: flex;
@@ -315,6 +315,33 @@ a:active{
     margin: 10px 8px 10px 22px;
     color: #29274C;
     line-height: 1.4em;
+}
+
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+#xPay {
+    width: 15px;
+    border-top: 2px solid #29274C; 
+    position: absolute;
+    top: 12px;
+    left: 7px;
+
+    transform: rotate(45deg) translate(-2px, 2px);
+}
+#xPay::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 15px;
+    background-color: #29274C;
+    transform: rotate(90deg) translate(-2px, 0px);
 }
 
 
@@ -398,10 +425,24 @@ a:active{
         transform: translateX(70vw) rotate(-5deg);
     }
 }
+@keyframes carReverse {
+    from {
+        transform:translateX(70vw) rotate(-5deg);;
+    } to {
+        transform: translateX(0);
+    }
+} 
 @keyframes payCard {
     from {
         tranform: translateX(-100vw);
     } to {
         transform: translateX(100vw);
+    }
+}
+@keyframes payCardReverse {
+    0% {
+        tranform: translateX(100vw);
+    } 100% {
+        transform: translateX(-100vw);
     }
 }
