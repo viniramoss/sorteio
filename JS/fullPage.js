@@ -131,7 +131,8 @@ window.addEventListener('resize', function () {
     const payCard = document.getElementById('pagamento');
     const buyBtn = document.getElementById('buy-btn');
     const showNumeros = document.querySelector('#showNumeros p');
-    const closeBtn = document.getElementById('closeBtn')
+    const closeBtn = document.getElementById('closeBtn');
+    const comprarBtn = document.getElementById('comprarBtn');
 
     function toolsPay(){
 
@@ -144,18 +145,24 @@ window.addEventListener('resize', function () {
                 liTicket[i].removeEventListener('click', activeBtn);
             }
             showNumeros.textContent = numerosParticipantes.join(' - ')
-            console.log(this.tagName)
         } else {
             for(let i = 0; i <= n; i++) {
                 liTicket[i].addEventListener('click', activeBtn);
             }
-            payCard.style.animation = `payCardReverse .5 linear forwards`
+            payCard.style.animation = `payCardReverse .5s linear forwards`
             body.style.overflowY = 'visible'
             buyBtn.style.animation = `carReverse .5s linear forwards`
-            console.log(this.tagName)
         }
-        
     }
+    function fechaPagamento(){
+        closeBtn.click()
+        document.getElementById('loader').style.display = 'none';
+    }
+    function loadAdd(){
+        document.getElementById('loader').style.display = 'block';
+        setTimeout(fechaPagamento, 2000)
+    }
+    comprarBtn.addEventListener('click', loadAdd)
     buyBtn.addEventListener('click', toolsPay)
     closeBtn.addEventListener('click', toolsPay)
 })();

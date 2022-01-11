@@ -321,11 +321,12 @@ a:active{
 
 #closeBtn {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 2px;
+    left: 2px;
     height: 25px;
     width: 25px;
     border-radius: 50%;
+
 }
 
 #xPay {
@@ -344,6 +345,26 @@ a:active{
     width: 15px;
     background-color: #29274C;
     transform: rotate(90deg) translate(-2px, 0px);
+}
+#comprarBtn {
+    margin: auto 0 10px 0;
+    border-radius: 6px;
+    border: solid 2px #437C90;
+    color: #437C90;
+    background-color: #DBDBDB;
+    padding: 5px;
+    font-size: .8em;
+    text-transform: uppercase;
+}
+#loader {
+    border: solid 5px #ccc;
+    border-top:solid 5px #29274C;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-top: 35%;
+    animation: loaderRotate 1s  infinite;
+    display: none;
 }
 
 
@@ -402,6 +423,10 @@ a:active{
     .nav-menu li:hover {
         color: #437c9088;
     }
+    #closeBtn {
+        top: 10px;
+        left: 10px;
+    }
 
 }
 
@@ -446,5 +471,10 @@ a:active{
         tranform: translateX(100vw);
     } 100% {
         transform: translateX(-100vw);
+    }
+}
+@keyframes loaderRotate {
+    to {
+        transform: rotate(1turn);
     }
 }
