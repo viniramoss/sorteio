@@ -260,6 +260,7 @@ a:active{
     justify-content: center;
 }
 #buy-btn {
+    cursor: pointer;
     position: relative;
     right: 3px;
     background: none;
@@ -330,6 +331,7 @@ a:active{
 }
 
 #xPay {
+    cursor: pointer;
     width: 15px;
     border-top: 2px solid #29274C; 
     position: absolute;
@@ -355,6 +357,7 @@ a:active{
     padding: 5px;
     font-size: .8em;
     text-transform: uppercase;
+    cursor: pointer;
 }
 #loader {
     border: solid 5px #ccc;
@@ -365,6 +368,25 @@ a:active{
     margin-top: 35%;
     animation: loaderRotate 1s  infinite;
     display: none;
+}
+
+
+#executar-sorteio {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: .85em;
+    border: none;
+    border-radius: 5px;
+    background-color: #29274C;
+    color: #e9e7f0;
+    padding: 3px 5px;
+
+    position: relative;
+    top: 45px;
+    left: 20px;
 }
 
 

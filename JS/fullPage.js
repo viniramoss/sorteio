@@ -159,7 +159,7 @@ window.addEventListener('resize', function () {
     }
     function fechaPagamento(){
         document.getElementById('loader').style.display = 'none';
-        closeBtn.click()
+        closeBtn.click();
         for(let numeroAtual = 0; numeroAtual < numerosParticipantes.length; numeroAtual++){
             for(let i = 0; i < n; i++){
                 if(liTicket[i].textContent == numerosParticipantes[numeroAtual]){
@@ -168,6 +168,7 @@ window.addEventListener('resize', function () {
                 }
             }
         }
+        document.querySelector('#numeros-participantes p').textContent = numerosParticipantes.join(' - ')
     }
     function loadAdd(){
         document.getElementById('loader').style.display = 'block';
