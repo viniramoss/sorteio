@@ -2,7 +2,6 @@ const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
 const n = dadosContainer.dados.qtdTickets
 
-
 const ulTickets = document.getElementById('ul-ticket')
 
 userDados()
@@ -56,6 +55,25 @@ function activeBtn() {
 
 }
 addActiveClass();
+
+
+
+
+// sorteio
+
+const sorteioBtn = document.getElementById('executar-sorteio');
+
+function sortear() {
+    let numero = Math.floor(Math.random() * numerosParticipantes.length)
+    if( nVal !== undefined){
+        console.log(nVal[numero])
+    }
+
+}
+sorteioBtn.addEventListener('click', sortear);
+
+
+
 
 
 
@@ -168,6 +186,7 @@ window.addEventListener('resize', function () {
                 }
             }
         }
+        nVal = numerosParticipantes
         document.querySelector('#numeros-participantes p').textContent = numerosParticipantes.join(' - ')
     }
     function loadAdd(){
@@ -180,6 +199,8 @@ window.addEventListener('resize', function () {
     buyBtn.addEventListener('click', toolsPay)
     closeBtn.addEventListener('click', toolsPay)
 })();
+
+let nVal
 
 
 
