@@ -33,7 +33,7 @@ function addTickets(){
 
 
 
-numerosParticipantes = [];
+const numerosParticipantes = [];
 
 
 
@@ -53,6 +53,7 @@ function activeBtn() {
     } else {
         numerosParticipantes.push(this.textContent) 
     }
+
 }
 addActiveClass();
 
@@ -147,7 +148,9 @@ window.addEventListener('resize', function () {
             showNumeros.textContent = numerosParticipantes.join(' - ')
         } else {
             for(let i = 0; i <= n; i++) {
-                liTicket[i].addEventListener('click', activeBtn);
+                if( !(liTicket[i].classList.contains('marked')) ){
+                    liTicket[i].addEventListener('click', activeBtn);
+                }
             }
             payCard.style.animation = `payCardReverse .5s linear forwards`
             body.style.overflowY = 'visible'
@@ -155,16 +158,28 @@ window.addEventListener('resize', function () {
         }
     }
     function fechaPagamento(){
-        closeBtn.click()
         document.getElementById('loader').style.display = 'none';
+        closeBtn.click()
+        for(let numeroAtual = 0; numeroAtual < numerosParticipantes.length; numeroAtual++){
+            for(let i = 0; i < n; i++){
+                if(liTicket[i].textContent == numerosParticipantes[numeroAtual]){
+                    liTicket[i].removeEventListener('click', activeBtn)
+                    liTicket[i].classList.add('marked')
+                }
+            }
+        }
     }
     function loadAdd(){
         document.getElementById('loader').style.display = 'block';
         setTimeout(fechaPagamento, 2000)
     }
+
     comprarBtn.addEventListener('click', loadAdd)
+
     buyBtn.addEventListener('click', toolsPay)
     closeBtn.addEventListener('click', toolsPay)
 })();
+
+
 
 
