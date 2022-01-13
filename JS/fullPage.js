@@ -2,6 +2,7 @@ const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
 const n = dadosContainer.dados.qtdTickets
 let nVal
+const body = document.getElementById('body');
 
 
 const ulTickets = document.getElementById('ul-ticket')
@@ -63,17 +64,27 @@ addActiveClass();
 
 
 // sorteio
-
-const sorteioBtn = document.getElementById('executar-sorteio');
-
-function sortear() {
-    let numero = Math.floor(Math.random() * numerosParticipantes.length)
-    if( nVal !== undefined){
-        console.log(nVal[numero])
+(function sorteio(){
+    const sorteioBtn = document.getElementById('executar-sorteio');
+    const sorteioBox = document.getElementById('sorteio-container');
+    const fecharBox = document.getElementById('closeBtn-sorteio');
+    
+    function sortear() {
+        let numero = Math.floor(Math.random() * numerosParticipantes.length)
+        if( nVal !== undefined){
+            console.log(nVal[numero])
+            sorteioBox.style.animation = `sorteioContainer .3s linear forwards`
+        } else {
+            alert('Para realizar o sorteio você precisa comprar um numero <3')
+        }
     }
+    function fechar() {
+        sorteioBox.style.animation = `sorteioContainerRev .3s linear forwards`
+    }
+    fecharBox.addEventListener('click', fechar)
+    sorteioBtn.addEventListener('click', sortear);
+})();
 
-}
-sorteioBtn.addEventListener('click', sortear);
 
 
 
@@ -149,7 +160,7 @@ window.addEventListener('resize', function () {
 
 (function payment(){
 
-    const body = document.getElementById('body');
+
     const payCard = document.getElementById('pagamento');
     const buyBtn = document.getElementById('buy-btn');
     const showNumeros = document.querySelector('#showNumeros p');

@@ -388,6 +388,21 @@ a:active{
     top: 45px;
     left: 20px;
 }
+#sorteio-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1000%, -50%);
+
+
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+
+    height: 350px;
+    width: 350px;
+    background-color: rgba(255, 0, 0, 0.712);
+}
 
 
 
@@ -498,5 +513,19 @@ a:active{
 @keyframes loaderRotate {
     to {
         transform: rotate(1turn);
+    }
+}
+@keyframes sorteioContainer{
+    from {
+        transform: translate(-1000%, -50%);
+    } to {
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes sorteioContainerRev {
+    from {
+        transform: translate(-50%, -50%);
+    } to {
+        transform: translate(-1000%, -50%);
     }
 }
