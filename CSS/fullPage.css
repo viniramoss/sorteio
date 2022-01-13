@@ -275,7 +275,7 @@ a:active{
 #pagamento {
     box-sizing: border-box;
 
-    background-color: rgb(253, 249, 242);
+    background-color: rgb(231, 228, 223);
     height: 60vh;
     width: 50vw;
 
@@ -397,14 +397,47 @@ a:active{
 
     display: flex;
     justify-content: center ;
-    align-items: center;
+    align-items: flex-start;
 
     height: 350px;
     width: 350px;
-    background-color: rgba(255, 0, 0, 0.712);
+    background-color: rgb(231, 228, 223);
+    border-radius: 10px;
+
+    z-index: 10000;
 }
+.mensagemSorteio {
+    border-radius: 10px;
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    padding-left: 23px;
+    margin: 45px 3px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: flex-end;
+}
+.mensagemSorteio span {
+    position: relative;
+    bottom: 4px;
+    left: 4px;
 
-
+    display: flex;
+    height: 2px;
+    width: 2px;
+}
+.mensagemSorteio span:nth-child(1) {
+    background-color: purple;
+}
+.mensagemSorteio span:nth-child(2) {
+    background-color: red;
+    margin-left: 2px;
+}
+.mensagemSorteio span:nth-child(3) {
+    background-color: rgb(76, 0, 255);
+    margin-left: 2px;
+}
 
 .l {
     color: #437C90;
@@ -522,7 +555,7 @@ a:active{
         transform: translate(-50%, -50%);
     }
 }
-@keyframes sorteioContainerRev {
+@keyframes4 sorteioContainerRev {
     from {
         transform: translate(-50%, -50%);
     } to {

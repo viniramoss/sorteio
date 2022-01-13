@@ -170,7 +170,7 @@ window.addEventListener('resize', function () {
     function toolsPay(){
 
         if(this.tagName === "BUTTON"){
-            buyBtn.style.animation = `car .5s linear forwards`
+            buyBtn.style.animation = `car .3s linear forwards`
             payCard.style.animation = `payCard .5 linear forwards 1s`
             body.style.overflow = 'hidden'
 
