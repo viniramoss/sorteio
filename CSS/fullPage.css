@@ -396,11 +396,12 @@ a:active{
 
 
     display: flex;
-    justify-content: center ;
-    align-items: flex-start;
+    justify-content: flex-start ;
+    align-items: center;
+    flex-direction: column;
 
-    height: 350px;
-    width: 350px;
+    height: 50%;
+    width: 85%;
     background-color: rgb(231, 228, 223);
     border-radius: 10px;
 
@@ -408,12 +409,14 @@ a:active{
 }
 .mensagemSorteio {
     border-radius: 10px;
-    width: 80%;
     background-color: white;
+    
+    box-sizing: border-box;
+    width: 80%;
     padding: 10px;
     padding-left: 23px;
     margin: 45px 3px;
-    box-sizing: border-box;
+    
     
     display: flex;
     align-items: flex-end;
@@ -438,6 +441,18 @@ a:active{
     background-color: rgb(76, 0, 255);
     margin-left: 2px;
 }
+.resultadoSorteio {
+    background-color: rgb(236, 234, 234);
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: .5em 2em;
+}
+.resultadoSorteio p {
+    font-size: 2em;
+}
+
+
+
 
 .l {
     color: #437C90;
@@ -446,7 +461,7 @@ a:active{
     color: #DBDBDB;
 }
 
-@media (min-width: 550px){    /* ipad */
+@media (min-width: 550px){
     #header {
         width: 100vw;
         display: flex;
