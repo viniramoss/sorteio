@@ -1,6 +1,8 @@
 const dadosLocalStorage = localStorage.getItem('json');
 const dadosContainer = JSON.parse(dadosLocalStorage);
 const n = dadosContainer.dados.qtdTickets
+let nVal
+
 
 const ulTickets = document.getElementById('ul-ticket')
 
@@ -49,7 +51,8 @@ function activeBtn() {
     let indexOf = numerosParticipantes.indexOf(this.textContent)
     if( indexOf >= 0){
         numerosParticipantes.splice(indexOf, 1) 
-    } else {
+    } 
+    if (_class.contains('active')){
         numerosParticipantes.push(this.textContent) 
     }
 
@@ -159,11 +162,28 @@ window.addEventListener('resize', function () {
             buyBtn.style.animation = `car .5s linear forwards`
             payCard.style.animation = `payCard .5 linear forwards 1s`
             body.style.overflow = 'hidden'
-    
+
             for(let i = 0; i <= n; i++) {
                 liTicket[i].removeEventListener('click', activeBtn);
             }
-            showNumeros.textContent = numerosParticipantes.join(' - ')
+            
+            
+            
+            const att = [];
+            for(let i = 0; i < numerosParticipantes.length; i++){
+                att.push(numerosParticipantes[i])
+            }
+            let contador = []
+            for(let i = 0; i < n; i++){
+                if(liTicket[i].classList.contains('marked')){
+                    let ind = numerosParticipantes.indexOf( liTicket[i].textContent ) 
+                    contador.push('.')
+                }
+            }
+            att.splice(0, contador.length)
+            showNumeros.textContent = att.join(' - ')
+
+
         } else {
             for(let i = 0; i <= n; i++) {
                 if( !(liTicket[i].classList.contains('marked')) ){
@@ -187,7 +207,8 @@ window.addEventListener('resize', function () {
             }
         }
         nVal = numerosParticipantes
-        document.querySelector('#numeros-participantes p').textContent = numerosParticipantes.join(' - ')
+        document.querySelector('#numeros-participantes p').textContent = numerosParticipantes.join(' - ');
+        
     }
     function loadAdd(){
         document.getElementById('loader').style.display = 'block';
@@ -200,7 +221,6 @@ window.addEventListener('resize', function () {
     closeBtn.addEventListener('click', toolsPay)
 })();
 
-let nVal
 
 
 
