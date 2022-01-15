@@ -429,6 +429,8 @@ a:active{
     display: flex;
     height: 2px;
     width: 2px;
+
+    color: #29274C;
 }
 .mensagemSorteio span:nth-child(1) {
     background-color: purple;
@@ -449,6 +451,17 @@ a:active{
 }
 .resultadoSorteio p {
     font-size: 2em;
+    color: #29274C;
+}
+.refazSor {
+    color: #29274C;
+    background-color: rgb(236, 234, 234);
+    margin-top: 15%;
+    margin-left: 60%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
 }
 
 

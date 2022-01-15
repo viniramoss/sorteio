@@ -65,24 +65,41 @@ addActiveClass();
 
 // sorteio
 (function sorteio(){
+    const refSor = document.querySelector('.refazSor')
     const sorteioBtn = document.getElementById('executar-sorteio');
     const sorteioBox = document.getElementById('sorteio-container');
     const fecharBox = document.getElementById('closeBtn-sorteio');
-    
-    function sortear() {
+    const resultSorteio = document.querySelector('.resultadoSorteio p');
+
+    function result(){
         let numero = Math.floor(Math.random() * numerosParticipantes.length)
+        resultSorteio.textContent = nVal[numero]
+    }
+
+    function boxSorteio() {
         if( nVal !== undefined){
-            console.log(nVal[numero])
-            sorteioBox.style.animation = `sorteioContainer .3s linear forwards`
+            sorteioBox.style.animation = `sorteioContainer .3s linear forwards`;
+            result()
+            body.style.overflow = 'hidden'
+            for(let i = 0; i <= n; i++) {
+                liTicket[i].removeEventListener('click', activeBtn);
+            }
         } else {
             alert('Para realizar o sorteio você precisa comprar um numero <3')
         }
     }
     function fechar() {
         sorteioBox.style.animation = `sorteioContainerRev .3s linear forwards`
+        body.style.overflow = 'visible'
+        for(let i = 0; i <= n; i++) {
+            if( !(liTicket[i].classList.contains('marked')) ){
+                liTicket[i].addEventListener('click', activeBtn);
+            }
+        }
     }
+    refSor.addEventListener('click', result)
     fecharBox.addEventListener('click', fechar)
-    sorteioBtn.addEventListener('click', sortear);
+    sorteioBtn.addEventListener('click', boxSorteio);
 })();
 
 
