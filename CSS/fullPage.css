@@ -456,8 +456,7 @@ a:active{
 .refazSor {
     color: #29274C;
     background-color: rgb(236, 234, 234);
-    margin-top: 15%;
-    margin-left: 60%;
+    margin-top: -25px;
     border: none;
     padding: 10px;
     border-radius: 10px;
