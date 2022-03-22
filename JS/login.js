@@ -6,9 +6,9 @@ function sendUser(event) {
 
 
 
-    if( document.getElementById('name').value !== 'User' || document.getElementById('pass').value !== '$1964' ) {
+    if( document.getElementById('name').value !== 'User' || document.getElementById('pass').value !== '$1961' ) {
 
-        if(document.getElementById('name').value !== 'User' && document.getElementById('pass').value !== '$1964') {
+        if(document.getElementById('name').value !== 'User' && document.getElementById('pass').value !== '$1961') {
             alert('Usuario e Senha invalidos')
         } else if( document.getElementById('name').value !== 'User' ) {
             alert('Nome de usuario invalido')
